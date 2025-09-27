@@ -52,7 +52,7 @@ do
         gmx make_ndx -f  min-ions_${lipid}_seed${replica}.gro -o index_${lipid}_seed${replica}.ndx < ./common/input_prot_nonprot.txt
 
 	#Equilibration
-        gmx grompp -f ./common/npt_eq.mdp -c min-ions_${lipid}_seed${replica}.gro -p ${lipid}_seed${replica}.top -o npt_eq_${lipid}_seed${replica}.tpr -n index_${lipid}_seed${replica}.ndx -r min-ions_${lipid}_seed${replica}.gro
+        gmx grompp -f ./common/npt_eq.mdp -c min-ions_${lipid}_seed${replica}.gro -p ${lipid}_seed${replica}.top -o npt_eq_${lipid}_seed${replica}.tpr -n index_${lipid}_seed${replica}.ndx -r min-ions_${lipid}_seed${replica}.gro -maxwarn 1
         gmx mdrun -nt 4 -v -deffnm npt_eq_${lipid}_seed${replica}
 
 	#TPR for production is generated
