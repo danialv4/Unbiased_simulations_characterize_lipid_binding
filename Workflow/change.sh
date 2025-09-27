@@ -11,5 +11,5 @@ sed -i "s/prot_cg_fc1000_eu8.pdb/$initial/g" workflow$nl.sh
 sed -i "s/prot_cg_newbox/prot${nl}_cg_newbox/g" workflow$nl.sh
 sed -i "s/min-vac.gro/prot${nl}_cg_newbox/g" workflow$nl.sh
 sed -i "s/\${replica}/\${replica}_2/g" workflow$nl.sh
-sed -i "s/\$lipid  1/\$lipid  2/g" workflow$nl.sh
+sed -i "s/\$lipid  1/\$lipid  $nl/g" workflow$nl.sh
 
